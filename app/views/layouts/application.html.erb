@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BeatTheBlaze</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>ARC GIS Map prototype</title>
   </head>
 
   <body>
     <%= yield %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

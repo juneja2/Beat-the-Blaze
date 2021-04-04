@@ -1,0 +1,22 @@
+<div id="mapViewDiv"></div>
+
+<script src="https://js.arcgis.com/4.18/"></script>
+<script>
+// Need to first load the Map and MapView modules from ARC GIS API
+// Order of the modules matter
+require(['esri/config', 'esri/Map', 'esri/views/MapView'], function(esriConfig, Map, MapView){
+// API Key obtained from the ARC GIS Dashboard
+    esriConfig.apiKey = "AAPK73ad4432f980482b91dd9734a88236284yQRz2kSW9okl_TZJ-VTZvETFxtvs2Qbb6ungm7dcEj2FE6mkSCwcpul2oc3jCs7";
+    const map = new Map({
+      basemap: "arcgis-topographic"
+    });
+
+    const view = new MapView({
+      map: map,
+      // Longitude first, latitude second
+      center: [-119.417931, 36.7783],
+      container: "mapViewDiv",
+      zoom: 10
+    });
+});
+</script>
