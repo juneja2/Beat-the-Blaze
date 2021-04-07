@@ -19,12 +19,21 @@ require(['esri/config', 'esri/Map', 'esri/views/MapView', 'esri/layers/GeoJSONLa
       zoom: 10
     });
 
+    // Adds information about current ongoing Fires in the US
     const geoJSONLayerFire = new GeoJSONLayer({
            url: "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/USA_Wildfires_v1/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
            copyright: "ArcGis",
         });
 
     map.add(geoJSONLayerFire);
+
+    // Adds information about current ongoing smoke Forecast
+    const geoJSONLayerSmoke = new GeoJSONLayer({
+               url: "https://opendata.arcgis.com/datasets/a98fd08751a5480c898b7cebe38807f4_0.geojson",
+               copyright: "ArcGis",
+            });
+
+    map.add(geoJSONLayerSmoke);
 });
 </script>
 
