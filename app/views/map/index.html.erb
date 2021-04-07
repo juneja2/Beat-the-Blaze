@@ -4,7 +4,7 @@
 <script>
 // Need to first load the Map and MapView modules from ARC GIS API
 // Order of the modules matter
-require(['esri/config', 'esri/Map', 'esri/views/MapView'], function(esriConfig, Map, MapView){
+require(['esri/config', 'esri/Map', 'esri/views/MapView', 'esri/layers/GeoJSONLayer'], function(esriConfig, Map, MapView, GeoJSONLayer){
 // API Key obtained from the ARC GIS Dashboard
     esriConfig.apiKey = "AAPK73ad4432f980482b91dd9734a88236284yQRz2kSW9okl_TZJ-VTZvETFxtvs2Qbb6ungm7dcEj2FE6mkSCwcpul2oc3jCs7";
     const map = new Map({
@@ -18,5 +18,14 @@ require(['esri/config', 'esri/Map', 'esri/views/MapView'], function(esriConfig, 
       container: "mapViewDiv",
       zoom: 10
     });
+
+    const geoJSONLayerFire = new GeoJSONLayer({
+           url: "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/USA_Wildfires_v1/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+           copyright: "ArcGis",
+        });
+
+    map.add(geoJSONLayerFire);
 });
 </script>
+
+
